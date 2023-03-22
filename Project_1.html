@@ -38,6 +38,94 @@
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
 
+        #snackbar2 {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #900;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar2.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        #snackbar3 {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #900;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar3.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        #snackbar4 {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #306100;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar4.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        #snackbar5 {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #191199;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar5.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
         @-webkit-keyframes fadein {
             from {bottom: 0; opacity: 0;}
             to {bottom: 30px; opacity: 1;}
@@ -64,6 +152,10 @@
 <div class="well">Fill out the form and click the submit button when complete...</div>
 
 <div id="snackbar">Error</div>
+<div id="snackbar2">Error: No cost calculated</div>
+<div id="snackbar3">Error: Negative cost</div>
+<div id="snackbar4">Submit Success</div>
+<div id="snackbar5">All fields cleared</div>
 
 
 <div class="container">
@@ -248,7 +340,7 @@
             document.getElementById('email').value = null;
             document.getElementById('days').value = null;
             document.getElementById('cost').value = null;
-            alert('All form cleared');
+            toastOut5();
         }
 
         function getDate(){
@@ -282,6 +374,27 @@
                 x.className = "show";
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
             }
+        function toastOut2() {
+            var x = document.getElementById("snackbar2");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        function toastOut3() {
+            var x = document.getElementById("snackbar3");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+        function toastOut4() {
+            var x = document.getElementById("snackbar4");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+        function toastOut5() {
+            var x = document.getElementById("snackbar5");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
 
         function Submit() {
             var cost = document.getElementById('cost').value;
@@ -304,12 +417,11 @@
                 document.getElementById('email').style.backgroundColor = "red";
                 toastOut();
             }else if(cost.length==0){
-                alert("Red Error: No Cost Now");
+                toastOut2();
             }else if(cost<0){
-                alert("Red Error: Negative cost");
+                toastOut3();
             }else{
-                toastOut();
-                alert("Successfully submitted");
+                toastOut4();
             }
         }
     </script>
