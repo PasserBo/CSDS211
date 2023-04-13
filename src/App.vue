@@ -201,15 +201,7 @@
 	editedTask: null,
 	reveal: false,
 	reveal2: false,
-	tasks: [
-	{
-	title: 'task1',
-	description: 'wow',
-	deadline: '2022-02-22',
-	priority: 'Low',
-	},
-
-	],
+	tasks: [],
 	}
 	},
 
